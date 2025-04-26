@@ -1,0 +1,66 @@
+diff --git a/.cursorrules b/.cursorrules
+new file mode 120000
+index 0000000..db4b888
+--- /dev/null
++++ b/.cursorrules
+@@ -0,0 +1 @@
++./prompts/rules/fullStack.md
+\ No newline at end of file
+diff --git a/.gitmodules b/.gitmodules
+new file mode 100644
+index 0000000..7f54170
+--- /dev/null
++++ b/.gitmodules
+@@ -0,0 +1,3 @@
++[submodule "prompts"]
++	path = prompts
++	url = git@github.com:ClipboardHealth/prompts.git
+diff --git a/diff.txt b/diff.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/prompts b/prompts
+new file mode 160000
+index 0000000..e50d28e
+--- /dev/null
++++ b/prompts
+@@ -0,0 +1 @@
++Subproject commit e50d28edde0b3c73c0b5b6c3388e28962b70fb92-dirty
+diff --git a/schema.prisma b/schema.prisma
+new file mode 100644
+index 0000000..c89f1b2
+--- /dev/null
++++ b/schema.prisma
+@@ -0,0 +1,8 @@
++model User {
++    id        Int      @id @default(autoincrement())
++    name      String
++    email     String   @unique
++    password  String
++    createdAt DateTime @default(now())
++    updatedAt DateTime @updatedAt
++}
+diff --git a/test.ts b/test.ts
+index f22355f..5c179aa 100644
+--- a/test.ts
++++ b/test.ts
+@@ -1 +1,5 @@
+-lalala
++let user: string | undefined = undefined; // Should show error
++
++function getUser() {
++  return user;
++}
+diff --git a/tsconfig.json b/tsconfig.json
+new file mode 100644
+index 0000000..537772d
+--- /dev/null
++++ b/tsconfig.json
+@@ -0,0 +1,8 @@
++{
++  "compilerOptions": {
++    "strict": true,
++    "strictNullChecks": true,
++    "noImplicitAny": true
++  },
++  "include": ["test.ts"]
++}
